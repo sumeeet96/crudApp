@@ -1,0 +1,54 @@
+<ng-container *ngIf="!issignUp"
+>
+<div class="flex items-center justify-center h-screen bg-gray-800">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md w-full">
+    <h2 class="text-2xl mb-4">Register</h2>
+    
+    <div class="mb-4">
+      <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+      <input type="email" id="email" name="email" formControlName="email"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <i class="text-tomato"
+         *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+        Email is required and must be valid
+      </i>
+    </div>
+
+    <div class="mb-6">
+      <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+      <input type="password" id="password" name="password" formControlName="password"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <i class="text-tomato"
+         *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+        Password Must Be at Least 7 Characters
+      </i>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <button type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              [disabled]="signupForm.invalid">
+        Register
+      </button>
+    </div>
+  </form>
+</div></ng-container>
+
+<ng-container *ngIf="issignUp" >
+
+  <div class="flex items-center justify-center h-screen bg-gray-800">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md w-full">
+      <h2 class="text-2xl mb-4">Register</h2>
+      <div class="flex items-center justify-between">
+        <button (click)="returnlogin()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+          return to login
+        </button>
+      </div>
+    </div>
+ 
+  </div>
+
+</ng-container>
+

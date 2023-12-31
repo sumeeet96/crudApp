@@ -1,0 +1,24 @@
+<!-- home.component.html -->
+
+<div class="bg-gray-800 text-white p-4">
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between">
+    <!-- Logo/Home -->
+    <a routerLink="/home" class="text-2xl font-bold">SupaBase CRUD App</a>
+
+    <!-- Navbar Options -->
+    <div class="flex space-x-4">
+      <a routerLink="/home" class="hover:text-gray-300">Home</a>
+      <a routerLink="/sign-up" class="hover:text-gray-300">Register</a>
+
+      <!-- User Information and Logout -->
+      <div class="flex items-center space-x-2" (click)="signout()">
+        <span class="hidden md:inline"></span>
+        <a routerLink="/login" class="hover:text-gray-300">Logout</a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- Rest of your home component content goes here -->
+
